@@ -1,14 +1,22 @@
-def we_crash_all(name: str) -> str:    
-    return 'Привет, ' + name + ', мы всё сломали!'
+import math
 
-print(we_crash_all(100)) 
+message = ('Добро пожаловать в самую лучшую программу для вычисления '
+           'квадратного корня из заданного числа')
 
-def main(duel_res) -> str:
-    current_rep: float = 0.0
-    for rep, result, effect in duel_res:
-        if result == 'success':
-            current_rep = add_rep(current_rep, rep, effect)
-        if result == 'failure':
-            current_rep = remove_rep(current_rep, rep, effect)
-    return f'После {len(duel_res)} поединков, '
-    f'репутация персонажа — {current_rep:.3f} очков.'
+
+def calculate_square_root(number):
+    """Вычисляет квадратный корень."""
+    return math.sqrt(number)
+
+
+def calc(your_number):
+    """Проверка на отрицательное значение."""
+    if your_number <= 0:
+        return
+    root = calculate_square_root(your_number)
+    print('Мы вычислили квадратный корень из введённого вами числа. '
+          'Это будет: ', root)
+
+
+print(message)
+calc(25.5)
